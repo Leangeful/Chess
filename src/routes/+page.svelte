@@ -1,2 +1,27 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { fenToPos } from '$lib/position';
+	import Board from '../lib/components/Board.svelte';
+
+	//TODO: parse the rest after the pos
+	let stdFEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+	let testFEN = '4rr1k/pQpn2pp/3p1q2/8/8/2P5/PP3PPP/RN3RK1 w - - 1 16';
+	let testFEN2 = '6k1/p3b2p/1p1pP3/2p3P1/1Pnp3B/P6P/3Q3K/8 w - - 0 38';
+	let fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+
+	$: pos = fen.split(' ')[0];
+</script>
+
+<div class="test">
+	<h1>Chess</h1>
+</div>
+
+<div class="fen">
+	<input type="text" bind:value={fen} />
+</div>
+<Board position={fenToPos(pos)} />
+
+<style>
+	input {
+		width: 100%;
+	}
+</style>
