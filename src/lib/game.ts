@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { fenFileName } from './dicts';
 
-export const _game = {
+const _game = {
 	position: createEmpty(),
 	turn: 'w'
 };
@@ -58,7 +58,7 @@ function createGame() {
 
 	return {
 		subscribe,
-		setFEN: (str: string) => update(() => parseFEN(str)),
+		parseFEN: (str: string) => update(() => parseFEN(str)),
 		setTurn: (p: string) => update(() => setTurn(p)),
 		reset: () => set(newGame())
 	};
