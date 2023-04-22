@@ -2,6 +2,7 @@
 	export let piece = 'pl';
 </script>
 
+<!-- FIXME: add the other images, the 404s are annoying -->
 <img class="piece" alt={piece} src="/pieces/{piece}.png" />
 
 <style>

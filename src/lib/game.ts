@@ -36,6 +36,8 @@ function parseFEN(fen: string): typeof _game {
 	});
 	_game.position = res;
 
+	//TODO: parse the other stuff
+
 	return _game;
 }
 

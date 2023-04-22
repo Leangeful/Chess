@@ -7,7 +7,7 @@
 
 	let color = 'dark';
 
-	export let isHighlight = false;
+	//export let isHighlight = false;
 
 	if ((file % 2 && rank % 2) || (!(file % 2) && !(rank % 2))) {
 		color = 'light';
