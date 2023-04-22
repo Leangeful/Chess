@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Square from './Square.svelte';
+	import { game } from '../game';
 	export let files = 8;
 	export let ranks = 8;
-	export let position: string[][];
 </script>
 
 <div class="board">
 	{#each Array(ranks) as _, rank}
 		{#each Array(files) as _, file}
-			<Square {rank} {file} piece={position[rank][file]} />
+			<Square {rank} {file} piece={$game.position[rank][file]} />
 		{/each}
 	{/each}
 </div>
